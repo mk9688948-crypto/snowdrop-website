@@ -1,86 +1,85 @@
-:root {
-    --gold: #D4AF37;
-    --charcoal: #121212;
-    --glass: rgba(255, 255, 255, 0.03);
-}
-
 body {
-    font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
+  margin: 0;
 }
 
-h1, h2, h3, .font-serif {
-    font-family: 'Cormorant Garamond', serif;
+.game-canvas {
+  width: 100%;
+  height: 100vw;
+  max-width: 500px;
+  max-height:500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.glass {
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.keys {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 200px;
+  margin: auto;
 }
 
-.gold-glow:hover {
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+.up {
+  position: relative;
+  top: -4px;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: #050505;
-}
-::-webkit-scrollbar-thumb {
-    background: #222;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: var(--gold);
+.chevron::before {
+  border-style: solid;
+  border-width: 8px 8px 0 0;
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  top: -10px;
+  position: relative;
+  transform: rotate(-45deg);
 }
 
-/* Animations */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
+.chevron.down::before {
+  transform: rotate(135deg);
+  top: -22px;
 }
 
-#navbar.scrolled {
-    background: rgba(5, 5, 5, 0.85);
-    backdrop-filter: blur(20px);
-    height: 70px;
-    border-bottom-color: rgba(255, 255, 255, 0.05);
+.chevron.right::before {
+  transform: rotate(45deg);
+  top: -18px;
+  left: -5px;
 }
 
-.menu-card img {
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+.chevron.left::before {
+  transform: rotate(225deg);
+  top: -18px;
+  left: 5px;
 }
 
-.menu-card:hover img {
-    transform: scale(1.1);
+.arr {
+  cursor: pointer;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  line-height: 100px;
+  background: gray;
+  color: white;
+  font-size: 50px;
+  border-right: 10px solid #ccc;
+  border-bottom: 10px solid #ccc;
+  border-left: 10px solid #ddd;
+  border-top: 10px solid #eee;
+  display: inline-block;
+  margin: 5px;
+  transition: all .05s linear;
+  user-select: none;
 }
 
-.gallery-img {
-    transition: all 0.5s ease;
+.arr:active {
+  background: #555;
 }
 
-.gallery-img:hover {
-    filter: brightness(1.2);
-    z-index: 10;
-}
-
-/* Review Card Glow */
-.review-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.review-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
-    pointer-events: none;
+#game-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(220, 220, 220, 0.6);
 }
