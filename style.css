@@ -16,32 +16,55 @@ header {
   font-size: 14px;
 }
 
+/* HERO */
 .hero {
-  padding: 60px 20px;
-  background: url('https://source.unsplash.com/1200x600/?restaurant,food') no-repeat center/cover;
+  height: 60vh;
+  background: url("images/exterior.jpg") no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .hero h2 {
-  font-size: 36px;
+  font-size: 32px;
 }
 
+/* GALLERY */
 .gallery {
   padding: 40px;
 }
 
 .images {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
 }
 
-.images img {
-  width: 250px;
-  height: 180px;
+.card {
+  width: 260px;
+  background: #1a1a1a;
   border-radius: 12px;
+  overflow: hidden;
 }
 
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 10px;
+}
+
+/* MENU */
 .menu {
   background: #1a1a1a;
   padding: 40px;
@@ -54,9 +77,9 @@ header {
 
 .menu li {
   margin: 10px 0;
-  font-size: 18px;
 }
 
+/* REVIEWS */
 .reviews {
   padding: 40px;
 }
@@ -69,6 +92,7 @@ header {
   border-radius: 10px;
 }
 
+/* CONTACT */
 .contact {
   padding: 40px;
 }
@@ -82,8 +106,8 @@ header {
   text-decoration: none;
 }
 
+/* FOOTER */
 footer {
   background: black;
   padding: 15px;
-  font-size: 14px;
 }
