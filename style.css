@@ -1,45 +1,50 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f0f;
   color: white;
   text-align: center;
 }
 
 header {
-  background: #000;
+  background: black;
   padding: 20px;
 }
 
+.rating {
+  color: gold;
+  font-size: 14px;
+}
+
 .hero {
-  padding: 50px 20px;
-  background: url('https://source.unsplash.com/800x500/?restaurant') no-repeat center/cover;
+  padding: 60px 20px;
+  background: url('https://source.unsplash.com/1200x600/?restaurant,food') no-repeat center/cover;
 }
 
 .hero h2 {
-  font-size: 32px;
+  font-size: 36px;
 }
 
 .gallery {
-  padding: 30px;
+  padding: 40px;
 }
 
 .images {
   display: flex;
   gap: 10px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .images img {
   width: 250px;
   height: 180px;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .menu {
-  padding: 30px;
   background: #1a1a1a;
+  padding: 40px;
 }
 
 .menu ul {
@@ -49,14 +54,36 @@ header {
 
 .menu li {
   margin: 10px 0;
+  font-size: 18px;
+}
+
+.reviews {
+  padding: 40px;
+}
+
+.review-box {
+  background: #1c1c1c;
+  margin: 10px auto;
+  padding: 15px;
+  width: 80%;
+  border-radius: 10px;
 }
 
 .contact {
-  padding: 30px;
+  padding: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: gold;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 footer {
-  background: #000;
-  padding: 10px;
+  background: black;
+  padding: 15px;
   font-size: 14px;
 }
