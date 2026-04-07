@@ -1,235 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Amisha Juice & Fast Food</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amisha Juice & Fast Food - Premium</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: white;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+header {
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
 
-    body {
-      background: #0f172a;
-      color: #fff;
-    }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    header {
-      background: linear-gradient(135deg, #f97316, #ef4444);
-      padding: 20px;
-      text-align: center;
-    }
+nav h2 {
+  color: #f97316;
+}
 
-    header h1 {
-      font-size: 2rem;
-    }
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
 
-    header p {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      background: #1e293b;
-      padding: 10px;
-    }
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg,#f97316,#ef4444);
+}
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+.hero h1 {
+  font-size: 3rem;
+}
 
-    nav a:hover {
-      color: #f97316;
-    }
+.btn {
+  padding: 12px 25px;
+  background: black;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    .hero {
-      text-align: center;
-    }
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
 
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
 
-    .hero p {
-      opacity: 0.8;
-    }
+.card:hover {
+  transform: scale(1.05);
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #f97316;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.order-box {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-    .btn:hover {
-      background: #ea580c;
-    }
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
 
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+footer {
+  text-align: center;
+  padding: 20px;
+  background: black;
+}
+</style></head><body><header>
+<nav>
+<h2>Amisha</h2>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#order">Order</a></li>
+</ul>
+</nav>
+</header><div class="hero">
+<div>
+<h1>Street Food That Hits Different 🍜</h1>
+<p>Fast • Fresh • Affordable</p>
+<div class="btn" onclick="scrollToMenu()">Explore Menu</div>
+</div>
+</div><section id="menu">
+<h2>🔥 Menu</h2>
+<div class="menu-grid">
+<div class="card">Chicken Curry + Paratha - ₹150</div>
+<div class="card">Mix Non Veg Chowmein - ₹120</div>
+<div class="card">Mix Chowmein - ₹100</div>
+<div class="card">Fresh Juice - ₹80</div>
+</div>
+</section><section id="order">
+<h2>🛒 Order Now</h2>
+<div class="order-box">
+<input type="text" id="name" placeholder="Your Name">
+<select id="item">
+<option>Chicken Curry + Paratha</option>
+<option>Mix Non Veg Chowmein</option>
+<option>Mix Chowmein</option>
+<option>Fresh Juice</option>
+</select>
+<input type="number" id="qty" placeholder="Quantity">
+<div class="btn" onclick="placeOrder()">Place Order (WhatsApp)</div>
+</div>
+</section><footer>
+© 2026 Amisha Juice & Fast Food
+</footer><script>
+function scrollToMenu() {
+  document.getElementById('menu').scrollIntoView({behavior:'smooth'});
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+function placeOrder() {
+  let name = document.getElementById('name').value;
+  let item = document.getElementById('item').value;
+  let qty = document.getElementById('qty').value;
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+  let message = `Hello, I want to order:\nName: ${name}\nItem: ${item}\nQuantity: ${qty}`;
 
-    .card h3 {
-      color: #f97316;
-      margin-bottom: 10px;
-    }
-
-    .info-box {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border-radius: 10px;
-      border: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-      font-size: 0.8rem;
-      opacity: 0.7;
-    }
-  </style>
-</head>
-
-<body>
-
-  <header>
-    <h1>🍹 Amisha Juice & Fast Food</h1>
-    <p>Fresh Juice • Street Style Fast Food • Budget Friendly</p>
-  </header>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#menu">Menu</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <h2>Best Local Spot for Fast Food ❤️</h2>
-    <p>Affordable, tasty, and loved by locals</p>
-    <a href="#menu" class="btn">View Menu</a>
-  </section>
-
-  <!-- MENU -->
-  <section id="menu">
-    <h2>🔥 Popular Menu</h2>
-    <br>
-
-    <div class="menu">
-      <div class="card">
-        <h3>Chicken Curry + Paratha</h3>
-        <p>1 piece chicken with 2 paratha</p>
-        <p>₹150 approx</p>
-      </div>
-
-      <div class="card">
-        <h3>Mix Non-Veg Chowmein</h3>
-        <p>Loaded with chicken & egg</p>
-        <p>₹120 approx</p>
-      </div>
-
-      <div class="card">
-        <h3>Mix Chowmein</h3>
-        <p>Veg + egg combo</p>
-        <p>₹100 approx</p>
-      </div>
-
-      <div class="card">
-        <h3>Fresh Juices</h3>
-        <p>Seasonal fruits juice</p>
-        <p>₹50–₹100</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>📍 About Us</h2>
-    <br>
-
-    <div class="info-box">
-      <p>
-        Amisha Juice & Fast Food is a small but popular local eatery known for its
-        delicious street-style food and refreshing juices.
-      </p>
-      <br>
-      <p>⭐ Rating: 4.0 (185 reviews)</p>
-      <p>💰 Price: ₹1–200 per person</p>
-      <p>🍽 Services: Dine-in, Drive-through, Delivery</p>
-      <p>🕒 Open till: 10:30 PM</p>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>📞 Contact & Location</h2>
-    <br>
-
-    <div class="info-box">
-      <p><strong>Address:</strong><br>
-        Khunti - Chaibasa Rd,<br>
-        near NIFFT, opp. Anish Enclave,<br>
-        Hatia, Ranchi, Jharkhand
-      </p>
-
-      <br>
-      <p><strong>Phone:</strong> 080925 47265</p>
-
-      <br>
-      <a class="btn" href="tel:08092547265">Call Now</a>
-    </div>
-
-    <iframe 
-      src="https://maps.google.com/maps?q=Amisha%20Juice%20%26%20Fast%20Food%20Ranchi&t=&z=13&ie=UTF8&iwloc=&output=embed">
-    </iframe>
-  </section>
-
-  <footer>
-    © 2026 Amisha Juice & Fast Food | Built with ❤️
-  </footer>
-
-</body>
+  let url = `https://wa.me/918092547265?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+}
+</script></body>
 </html>
